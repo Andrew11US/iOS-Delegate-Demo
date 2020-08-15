@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Delegate_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lNY-QD-dBd">
+                                <rect key="frame" x="30" y="403" width="354" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S74-jC-cOt">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywA-xk-qX1">
+                                        <rect key="frame" x="0.0" y="60" width="354" height="30"/>
+                                        <state key="normal" title="Go to selection"/>
+                                        <connections>
+                                            <action selector="openSelectionScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YFu-Hu-8kq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lNY-QD-dBd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4y6-9u-3QJ"/>
+                            <constraint firstItem="lNY-QD-dBd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OHF-zL-lXy"/>
+                            <constraint firstItem="lNY-QD-dBd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="dyn-A2-ZJR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lNY-QD-dBd" secondAttribute="trailing" constant="30" id="ukY-Mz-ZoI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="S74-jC-cOt" id="p3h-pG-wEA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="115"/>
+        </scene>
+        <!--SelectionVC-->
+        <scene sceneID="vWR-XO-pGH">
+            <objects>
+                <viewController storyboardIdentifier="SelectionVC" id="zdI-J9-axW" customClass="SelectionVC" customModule="Delegate_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Hc-gv-0KY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="azs-P4-uVb">
+                                <rect key="frame" x="30" y="403" width="354" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oox-kk-a5F">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                        <color key="backgroundColor" red="0.82745098039999998" green="0.38431372549999998" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Cap side">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="capTapped:" destination="zdI-J9-axW" eventType="touchUpInside" id="eci-wp-BP6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHd-ib-ur2">
+                                        <rect key="frame" x="0.0" y="60" width="354" height="30"/>
+                                        <color key="backgroundColor" red="0.01176470588" green="0.48627450979999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Stark side">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="starkTapped:" destination="zdI-J9-axW" eventType="touchUpInside" id="0Np-Hj-dJ0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="azs-P4-uVb" firstAttribute="leading" secondItem="cp0-FO-cz2" secondAttribute="leading" constant="30" id="8EQ-OB-j3v"/>
+                            <constraint firstItem="azs-P4-uVb" firstAttribute="centerY" secondItem="2Hc-gv-0KY" secondAttribute="centerY" id="9iQ-Ac-Ddj"/>
+                            <constraint firstItem="cp0-FO-cz2" firstAttribute="trailing" secondItem="azs-P4-uVb" secondAttribute="trailing" constant="30" id="VWl-JD-fzz"/>
+                            <constraint firstItem="azs-P4-uVb" firstAttribute="centerX" secondItem="2Hc-gv-0KY" secondAttribute="centerX" id="Y1S-VR-6ql"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cp0-FO-cz2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vyT-Nk-HUz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sme-VZ-3Dl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="115"/>
         </scene>
     </scenes>
 </document>
